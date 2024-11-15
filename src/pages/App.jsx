@@ -1,7 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './images/logo.svg';
+import './css/App.css';
 
 function App() {
+  let name =  'Tester'
   return (
     <div className="App">
       <header className="App-header">
