@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './pages/css/index.css';
 import App from './pages/App';
 import Test from './pages/test';
+import Profile from './pages/profile'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
     path: '/test',
     element: <Test />,
   },
+  {
+  path: '/profile',
+  element: <Profile />,
+ }
   // Add more routes here...
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
