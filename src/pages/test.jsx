@@ -1,6 +1,9 @@
 import { MdLightbulb } from "react-icons/md";
 import { IoLogoDiscord } from "react-icons/io5";
 import Question from "../components/Question";
+import ProfileCard from '../components/ProfileCard';
+import React from 'react';
+
 
 function Test(){
     const sport = "Baseball"
@@ -21,6 +24,19 @@ function Test(){
         {
             triggered.length > 0 ? <h1>Hello Data</h1>: <h1>Nothing Found </h1>
         }
+    <div>
+      <ProfileCard
+        profileImage="https://cloudinary.com/150"
+        firstName="John"
+        lastName="Doe"
+        email="johndoe@example.com"
+        socialLinks={{
+          github: "https://github.com/johndoe",
+          instagram: "https://instagram.com/johndoe",
+          facebook: "https://facebook.com/johndoe"
+        }}
+      />
+    </div>
 
         </>
 

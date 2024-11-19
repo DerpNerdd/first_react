@@ -1,32 +1,38 @@
+import React from 'react';
+import { FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
+import '../pages/css/ProfileCard.css'; // Import the CSS for styling
 
-// import ProfileCardCSS from './ProfileCard.css';
-export default function ProFileCard ({firstName, lastName, email, avatar, socialMediaLinks}){
-    let testprofile = {
-        firstName: 'John',
-        lastName: 'Doe',
-        email: 'johndoe@example.com',
-        avatar: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
-        socialMediaLinks: [
-            {label: 'Twitter', url: 'https://twitter.com/johndoe', icon: 'https://example.com/twitter.png'},
-            {label: 'Instagram', url: 'https://instagram.com/johndoe', icon: 'https://example.com/instagram.png'},
-            {label: 'LinkedIn', url: 'https://linkedin.com/in/johndoe', icon: 'https://example.com/linkedin.png'}
-        ]
-    }
+const ProfileCard = ({ profileImage, firstName, lastName, email, socialLinks }) => {
+  const defaultImage = 'https://via.placeholder.com/150'; // Default image if none is provided
 
-    return(
-        <section className="bg-white dark:bg-gray-900">
-            <img src={avatar} alt={firstName + lastName} />
-            <h2>{firstName} {lastName}</h2>
-            <p>{email}</p>
-            <ul>
-                {socialMediaLinks.map((link, index) => (
-                    <li key={index}>
-                        <a href={link.url} target="_blank" rel="noopener noreferrer">
-                            <img src={link.icon} alt={link.label} />
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </section>
-    )
-}
+  return (
+    <div className="profile-card">
+      <img
+        src={profileImage || defaultImage}
+        alt={`${firstName} ${lastName}`}
+        className="profile-picture"
+      />
+      <h2 className="profile-name">{`${firstName} ${lastName}`}</h2>
+      <a href={`mailto:${email}`} className="profile-email">{email}</a>
+      <div className="social-links">
+        {socialLinks.github && (
+          <a href={socialLinks.github} target="_blank" rel="noopener noreferrer">
+            <FaGithub className="social-icon" />
+          </a>
+        )}
+        {socialLinks.instagram && (
+          <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">
+            <FaInstagram className="social-icon" />
+          </a>
+        )}
+        {socialLinks.facebook && (
+          <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer">
+            <FaFacebook className="social-icon" />
+          </a>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ProfileCard;
