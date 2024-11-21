@@ -4,6 +4,7 @@ import './pages/css/index.css';
 import App from './pages/App';
 import Test from './pages/test';
 import Profile from './pages/profile'
+import Footer from './pages/footer'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -17,8 +18,12 @@ const router = createBrowserRouter([
   },
   {
   path: '/profile',
-  element: <Profile />,
- }
+  element: <Profile />
+  },
+  {
+  path: '/footer',
+  element: <Footer />,
+  }
   // Add more routes here...
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
