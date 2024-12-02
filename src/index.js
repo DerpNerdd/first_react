@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './pages/css/index.css';
 import App from './pages/App';
 import Test from './pages/test';
-import Profile from './pages/profile'
-import Footer from './pages/footer'
+import Profile from './pages/profile';
+import Footer from './pages/footer';
+import GalleryPage from './pages/Gallery'; // Ensure the file name matches
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -17,22 +18,23 @@ const router = createBrowserRouter([
     element: <Test />,
   },
   {
-  path: '/profile',
-  element: <Profile />
+    path: '/profile',
+    element: <Profile />,
   },
   {
-  path: '/footer',
-  element: <Footer />,
-  }
+    path: '/footer',
+    element: <Footer />,
+  },
+  {
+    path: '/gallery',
+    element: <GalleryPage />, // Use the GalleryPage component
+  },
   // Add more routes here...
-])
+]);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
